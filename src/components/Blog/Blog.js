@@ -4,7 +4,7 @@ const Blog = () => {
     return (
         <div className='container py-5'>
             <h2 className='text-center'>Questions & Answers</h2>
-            <div className="row mt-4 g-4">
+            <div className="row mt-1 g-4">
                 <div className='col-12'>
                     <div className="card rounded-0">
                         <div className="card-body text-center">
