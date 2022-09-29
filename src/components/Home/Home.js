@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Break from '../Break/Break';
 import Exercise from '../Exercise/Exercise';
+import ExerciseDetails from '../ExerciseDetails/ExerciseDetails';
 import Header from '../Header/Header';
 import Person from '../Person/Person';
 
@@ -27,6 +28,7 @@ const Home = () => {
             <div className="col-lg-3 p-5">
                 <Person></Person>
                 <Break></Break>
+                <ExerciseDetails></ExerciseDetails>
             </div>
         </div>
     );

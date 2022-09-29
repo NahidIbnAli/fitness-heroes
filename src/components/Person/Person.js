@@ -17,7 +17,7 @@ const Person = () => {
                     </div>
                 </div>
             </div>
-            <div className='d-flex justify-content-evenly my-4 bg-light py-3'>
+            <div className='d-flex justify-content-evenly mt-4 bg-light py-3'>
                     <div>
                         <div className='d-flex align-items-center'>
                         <h3 className='m-0'>70</h3><small className='text-muted'>kg</small>
