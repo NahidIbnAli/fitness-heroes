@@ -17,7 +17,7 @@ const Home = () => {
                     <h3 className='mt-4'>Select today's exercise</h3>
                     <div className="row g-4 py-4">
                        {
-                        exercises.map(exercise => <Exercise exercise={exercise}></Exercise>)
+                        exercises.map(exercise => <Exercise exercise={exercise} key={exercise.id}></Exercise>)
                        }
                     </div>
                 </div>
