@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Exercise from '../Exercise/Exercise';
 import Header from '../Header/Header';
+import Person from '../Person/Person';
 
 const Home = () => {
     const [exercises, setExercises] = useState([]);
@@ -23,7 +24,7 @@ const Home = () => {
                 </div>
             </div>
             <div className="col-lg-3 p-5">
-                
+                <Person></Person>
             </div>
         </div>
     );
