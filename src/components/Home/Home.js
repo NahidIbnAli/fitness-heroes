@@ -29,6 +29,7 @@ const Home = () => {
                 <Person></Person>
                 <Break></Break>
                 <ExerciseDetails></ExerciseDetails>
+                <button className='btn btn-lg btn-warning w-100 rounded-0'>Activity Completed</button>
             </div>
         </div>
     );
