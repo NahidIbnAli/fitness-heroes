@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from 'react';
+import Exercise from '../Exercise/Exercise';
 import Header from '../Header/Header';
 
 const Home = () => {
-    const [exercise, setExercise] = useState([]);
+    const [exercises, setExercises] = useState([]);
     useEffect(() => {
         fetch('data.json')
         .then(res => res.json())
-        .then(data => setExercise(data))
+        .then(data => setExercises(data))
     }, [])
     return (
         <div className='row'>
             <div className="col-lg-9 py-4 bg-light">
                 <div className="container">
                     <Header></Header>
+                    <h3 className='mt-4'>Select today's exercise</h3>
+                    <div className="row g-4 py-4">
+                       {
+                        exercises.map(exercise => <Exercise exercise={exercise}></Exercise>)
+                       }
+                    </div>
                 </div>
             </div>
             <div className="col-lg-3 p-5">
