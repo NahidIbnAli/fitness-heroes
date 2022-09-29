@@ -8,14 +8,23 @@ import Person from '../Person/Person';
 const Home = () => {
     const [exercises, setExercises] = useState([]);
     const [exercisesData, setExercisesData] = useState([]);
+    const [selectedBreak, setSelectedBreak] = useState(0);
     useEffect(() => {
         fetch('data.json')
         .then(res => res.json())
         .then(data => setExercises(data))
     }, [])
-    const handleAddToExerciseDetails = (exercise) => {
+    useEffect(() => {
+        const storedBreakTime = localStorage.getItem('breakTime');
+        setSelectedBreak(storedBreakTime)
+    }, [])
+    const handleAddToExerciseDetails = exercise => {
         const newExercises = [...exercisesData, exercise]
         setExercisesData(newExercises);
+    }
+    const addToSelectedBreak = breakTime => {
+        setSelectedBreak(breakTime.target.innerText);
+        localStorage.setItem('breakTime', breakTime.target.innerText);
     }
     return (
         <div className='row'>
@@ -32,9 +41,8 @@ const Home = () => {
             </div>
             <div className="col-lg-3 p-5">
                 <Person></Person>
-                <Break></Break>
-                <ExerciseDetails exercises={exercisesData}></ExerciseDetails>
-                <button className='btn btn-lg btn-warning w-100 rounded-0'>Activity Completed</button>
+                <Break addToSelectedBreak={addToSelectedBreak}></Break>
+                <ExerciseDetails exercises={exercisesData} selectedBreak={selectedBreak}></ExerciseDetails>
             </div>
         </div>
     );
